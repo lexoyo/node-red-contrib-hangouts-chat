@@ -1,0 +1,28 @@
+{
+  "name": "node-red-contrib-hangouts-chat",
+  "version": "0.0.1",
+  "description": "Node-RED node to connect to google hangouts chat",
+  "author": "lexoyo",
+  "keywords": [
+    "node-red",
+    "hangouts",
+    "hangouts chat",
+    "chat",
+    "hangout"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "hangouts-chat": "hangouts-chat.js"
+    }
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "googleapis": "^33.0.0",
+    "unirest": "^0.5.1"
+  }
+}

@@ -1,0 +1,62 @@
+<script type="text/javascript">
+  RED.nodes.registerType("hangouts-chat-in", {
+    category: "input",
+    color: "#109083",
+    icon: "hangouts-chat.png",
+    defaults: {
+      name: {value:"", required: false},
+    },
+    inputs:0,
+    outputs:1,
+    label: function() {
+      return this.name ? this.name : "Hangouts chat";
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="hangouts-chat-in">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="hangouts-chat-in">
+   <p>Receive messages from Google hangouts chat</p>
+</script>
+
+
+
+
+<script type="text/javascript">
+  RED.nodes.registerType("hangouts-chat-out", {
+    category: "output",
+    color: "#109083",
+    icon: "hangouts-chat.png",
+    defaults: {
+      name: {value:"", required: false},
+      keyFile: { value:"", required: true},
+    },
+    inputs:1,
+    outputs:0,
+    label: function() {
+      return this.name ? this.name : "Hangouts chat";
+    },
+  });
+</script>
+
+<script type="text/x-red" data-template-name="hangouts-chat-out">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-keyFile"><i class="fa fa-user"></i> Key file path</label>
+        <input type="text" id="node-input-keyFile">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="hangouts-chat-out">
+   <p>send messages to Google hangouts chat</p>
+</script>
+
