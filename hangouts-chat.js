@@ -18,10 +18,11 @@ module.exports = function(RED) {
       const roomId = req.body.space.name;
       console.log('someone pinged @<bot-name>', roomId);
 
-      node.send(Object.assign({}, req.body, {
+      node.send({
 				payload: req.body.message.text,
 				roomId: roomId,
-			}));
+				event: req.body,
+			});
 
       return res.json({
       });
