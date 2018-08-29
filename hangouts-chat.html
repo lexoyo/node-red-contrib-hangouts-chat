@@ -22,7 +22,17 @@
 </script>
 
 <script type="text/x-red" data-help-name="hangouts-chat-in">
-   <p>Receive messages from Google hangouts chat</p>
+   <p>Receive messages from Google hangouts chat. Google hangouts chat is only available to paid G Suite custommers.</p>
+   <p>You will need to create a project in Google cloud platform with Hangouts chat enabled. To do so, login to <a href="https://console.developers.google.com" target="_blank">developer console</a>. Create a new project, and enable Hangout Chat API. Under configuration, set:</p>
+  <ul>
+    <li>status: live</li>
+    <li>bot name (this is how you will add and ping the bot)</li>
+    <li>avatar</li>
+    <li>description</li>
+    <li>functionality: rooms</li>
+    <li>connection settings – bot URL: &lt;your node-red server HTTPS url&gt;</li>
+    <li>permission: everyone in your domain</li>
+  </ul>
 </script>
 
 
@@ -35,7 +45,7 @@
     icon: "hangouts-chat.png",
     defaults: {
       name: {value:"", required: false},
-      keyFile: { value:"", required: true},
+      varName: { value:"googlekeys", required: true},
     },
     inputs:1,
     outputs:0,
@@ -50,13 +60,30 @@
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+
     <div class="form-row">
-        <label for="node-input-keyFile"><i class="fa fa-user"></i> Key file path</label>
-        <input type="text" id="node-input-keyFile">
+      <label for="node-input-typed-complete"><i class="fa fa-list"></i><span> Google keys</span></label>
+      <div style="width: 70%; margin-right: 0px; margin-left: 0px;" class="red-ui-typedInput-container red-ui-typedInput-focus">
+        <button tabindex="0"><span>msg.</span></button>
+        <span class="red-ui-typedInput-option-label"></span>
+        <input type="text" placeholder="googlekeys" id="node-input-varName" style="margin-left: 40px;">
+      </div>
     </div>
 </script>
 
 <script type="text/x-red" data-help-name="hangouts-chat-out">
-   <p>send messages to Google hangouts chat</p>
+   <p>This node sends messages to Google hangouts chat. Google hangouts chat is only available to paid G Suite custommers.</p>
+   <p>You will need to create a project in Google cloud platform with Hangouts chat enabled. To do so, login to <a href="https://console.developers.google.com" target="_blank">developer console</a>. Create a new project, and enable Hangout Chat API. Under configuration, set:</p>
+  <ul>
+    <li>status: live</li>
+    <li>bot name (this is how you will add and ping the bot)</li>
+    <li>avatar</li>
+    <li>description</li>
+    <li>functionality: rooms</li>
+    <li>connection settings – bot URL: &lt;your node-red server HTTPS url&gt;</li>
+    <li>permission: everyone in your domain</li>
+  </ul>
+   <p><strong>Google keys</strong> parameter is used to find the <strong>Google service account details</strong></p>
+   <p>To populate the Google keys variable you need to <a href="https://developers.google.com/hangouts/chat/how-tos/service-accounts">create a service account as explained here</a> and then use a node such as <a href="https://flows.nodered.org/node/node-red-contrib-process-env">node-red-contrib-process-env which reads the environement variables of your server</a> or <a href="https://flows.nodered.org/node/node-red-contrib-fs">node-red-contrib-fs to read the service account keys from a file</a>.</p>
 </script>
 
