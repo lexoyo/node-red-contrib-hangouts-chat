@@ -1,6 +1,6 @@
 # Hangouts Chat for Node-RED
 
-A node for you to make a chat bot on hangouts chat with red-node.
+A node for you to make a chat bot on [Hangouts Chat](https://chat.google.com) with [node red](https://nodered.org). Please note that Hangouts Chat is only available for paid G Suite customers.
 
 This is a work in progress, please write issues to ask for changes
 
